@@ -1,53 +1,3 @@
-/**
- * Copyright (c) 2008-2010 The Open Source Geospatial Foundation
- *
- * Published under the BSD license.
- * See http://svn.geoext.org/core/trunk/geoext/license.txt for the full text
- * of the license.
- */
-
-/**
- * @include GeoExt/data/LayerStore.js
- */
-
-/** api: (define)
- *  module = GeoExt
- *  class = MapPanel
- *  base_link = `Ext.Panel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Panel>`_
- */
-
-/** api: example
- *  Sample code to create a panel with a new map:
- *
- *  .. code-block:: javascript
- *
- *      var mapPanel = new GeoExt.MapPanel({
- *          border: false,
- *          renderTo: "div-id",
- *          map: {
- *              maxExtent: new OpenLayers.Bounds(-90, -45, 90, 45)
- *          }
- *      });
- *
- *  Sample code to create a map panel with a bottom toolbar in a Window:
- *
- *  .. code-block:: javascript
- *
- *      var win = new Ext.Window({
- *          title: "My Map",
- *          items: [{
- *              xtype: "gx_mappanel",
- *              bbar: new Ext.Toolbar()
- *          }]
- *      });
- */
-
-/** api: constructor
- *  .. class:: MapPanel(config)
- *
- *      Create a panel container for a map.
- */
-
 Ext.define('GeoExt.panel.Map', {
 	extend : 'Ext.panel.Panel',
 
@@ -57,7 +7,7 @@ Ext.define('GeoExt.panel.Map', {
 
 	statics : {
 		guess : function() {
-			return Ext.ComponentQuery("gx_mappanel")
+			return Ext.ComponentQuery.query("gx_mappanel")
 		}
 	},
 
@@ -183,7 +133,7 @@ Ext.define('GeoExt.panel.Map', {
 	 * The "changelayer" listener.
 	 */
 	onLayerchange : function(e) {
-		var me=this;
+		var me = this;
 		if(e.property) {
 			if(e.property === "visibility") {
 				me.fireEvent("afterlayervisibilitychange");
@@ -198,7 +148,7 @@ Ext.define('GeoExt.panel.Map', {
 	 *  Apply the state provided as an argument.
 	 */
 	applyState : function(state) {
-		var me=this;
+		var me = this;
 		// if we get strings for state.x, state.y or state.zoom
 		// OpenLayers will take care of converting them to the
 		// appropriate types so we don't bother with that
@@ -365,3 +315,4 @@ Ext.define('GeoExt.panel.Map', {
 		me.callParent(arguments);
 	}
 });
+
