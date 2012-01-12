@@ -1,26 +1,3 @@
-/**
- * Copyright (c) 2008-2010 The Open Source Geospatial Foundation
- *
- * Published under the BSD license.
- * See http://svn.geoext.org/core/trunk/geoext/license.txt for the full text
- * of the license.
- */
-
-/** api: (define)
- *  module = GeoExt.data
- *  class = LayerRecord
- *  base_link = `Ext.data.Record <http://dev.sencha.com/deploy/dev/docs/?class=Ext.data.Record>`_
- */
-//Ext.namespace("GeoExt.data");
-
-/** api: constructor
- *  .. class:: LayerRecord
- *
- *      A record that represents an ``OpenLayers.Layer``. This record
- *      will always have at least the following fields:
- *
- *      * title ``String``
- */
 Ext.define('GeoExt.data.LayerModel', {
 	extend : 'Ext.data.Model',
 	idProperty : "name",
