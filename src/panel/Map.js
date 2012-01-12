@@ -319,9 +319,12 @@ Ext.define('GeoExt.panel.Map', {
      *  this panel has dimensions greater than zero.
      */
     afterLayout : function() {
-        var me = this, width = me.getInnerWidth() - me.body.getBorderWidth("lr"), height = me.getInnerHeight() - me.body.getBorderWidth("tb");
+        var me = this, width = me.body.getWidth() - me.body.getBorderWidth("lr"), height = me.body.getHeight() - me.body.getBorderWidth("tb");
         if(width > 0 && height > 0) {
-            me.ownerCt.un("afterlayout", me.afterLayout, me);
+            if(me.ownerCt) {
+                me.ownerCt.un("afterlayout", me.afterLayout, me);
+            }
+
             me.renderMap();
         }
     },
@@ -360,11 +363,11 @@ Ext.define('GeoExt.panel.Map', {
         }
         if(me.map && me.map.events) {
             me.map.events.un({
-                "moveend": me.onMoveend,
-                "changelayer": me.onChangelayer,
-                "addlayer": me.onAddlayer,
-                "removelayer": me.onRemovelayer,
-                scope: me
+                "moveend" : me.onMoveend,
+                "changelayer" : me.onChangelayer,
+                "addlayer" : me.onAddlayer,
+                "removelayer" : me.onRemovelayer,
+                scope : me
             });
         }
         // if the map panel was passed a map instance, this map instance
