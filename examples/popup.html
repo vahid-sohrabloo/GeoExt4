@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>GeoExt 4 Popup Example</title>
+
+        <script type="text/javascript" src="http://extjs.cachefly.net/ext-4.0.7-gpl/ext-all-debug.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-4.0.7-gpl/resources/css/ext-all.css" />
+        <link rel="stylesheet" type="text/css" href="../resources/css/popup.css" />
+        <script src="http://www.openlayers.org/api/2.11/OpenLayers.js"></script>
+        <script type="text/javascript" src="../src/data/LayerStore.js"></script>
+        <script type="text/javascript" src="../src/data/reader/Layer.js"></script>
+        <script type="text/javascript" src="../src/data/LayerModel.js"></script>
+        <script type="text/javascript" src="../src/panel/Map.js"></script>
+        <script type="text/javascript" src="../src/Popup.js"></script>
+        
+        <script type="text/javascript" src="popup.js"></script>
+    
+        <style type="text/css">
+            div#map {
+               width: 650px;
+               height: 400px;
+               position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Popup Example</h1>
+        <p>Click on the point in the map panel to open a popup.
+        The js is not minified so it is readable. See <a href="popup.js">popup.js</a>.</p>
+        <div id="container"></div>
+    </body>
+</html>
