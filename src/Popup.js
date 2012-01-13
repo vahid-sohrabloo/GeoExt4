@@ -193,15 +193,13 @@ Ext.define('GeoExt.Popup', {
      */
     initTools : function() {
         var me=this;
+        me.callParent();
         if(me.unpinnable) {
-            me.tools = me.tools ? Ext.Array.clone(me.tools) : [];
             me.addTool({
                 type : 'unpin',
                 handler : Ext.bind(me.unanchorPopup, me, [])
             });
         }
-
-        me.callParent();
     },
     /** private: method[afterShow]
      *  Override.
